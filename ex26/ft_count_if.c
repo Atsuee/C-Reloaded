@@ -1,15 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wailas <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:07:38 by wailas            #+#    #+#             */
-/*   Updated: 2024/11/05 12:08:09 by wailas           ###   ########.fr       */
+/*   Created: 2024/11/07 10:52:53 by wailas            #+#    #+#             */
+/*   Updated: 2024/11/07 11:34:18 by wailas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_ft(int *nbr)
+
+int	ft_count_if(char **tab, int (*f)(char*))
 {
-	*nbr = 42;
+	int	i;
+	int	taille;
+
+	taille = 0;
+	i = 0;
+	while (tab[i])
+	{
+		if (f(tab[i]) == 1)
+			taille++;
+		i++;
+	}
+	return (taille);
 }

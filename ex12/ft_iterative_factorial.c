@@ -1,15 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wailas <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:07:38 by wailas            #+#    #+#             */
-/*   Updated: 2024/11/05 12:08:09 by wailas           ###   ########.fr       */
+/*   Created: 2024/11/05 12:19:07 by wailas            #+#    #+#             */
+/*   Updated: 2024/11/06 14:45:37 by wailas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_ft(int *nbr)
+
+int	ft_iterative_factorial(int nb)
 {
-	*nbr = 42;
+	int		result;
+
+	result = 1;
+	if (nb < 0)
+		return (0);
+	if (nb == 0)
+		return (1);
+	while (nb != 0)
+	{
+		result = nb * result;
+		nb--;
+	}
+	return (result);
 }

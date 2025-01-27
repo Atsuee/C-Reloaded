@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:06:00 by wailas            #+#    #+#             */
-/*   Updated: 2024/11/06 14:24:09 by wailas           ###   ########.fr       */
+/*   Created: 2024/11/06 10:51:36 by wailas            #+#    #+#             */
+/*   Updated: 2024/11/06 11:18:03 by wailas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
 
-void	ft_is_negative(int n)
+char	*ft_strdup(char *src)
+{
+	int		taille;
+	char	*dest;
+
+	taille = 0;
+	while (src[taille])
+		taille++;
+	dest = (char *)malloc(sizeof(char) * (taille + 1));
+	if (!dest)
+		return (NULL);
+	taille = 0;
+	while (src[taille])
 	{
-	if (n < 0)
-		ft_putchar('N');
-	else
-		ft_putchar('P');
+		dest[taille] = src[taille];
+		taille++;
+	}
+	dest[taille] = '\0';
+	return (dest);
 }
